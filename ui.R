@@ -20,7 +20,7 @@ shinyUI(fluidPage(
       numericInput('united', 'United Future', 0.5, min = 0, max = 100, step = 0.5),
       numericInput('conservative', 'Conservative', 0.5, min = 0, max = 100, step = 0.5),
       numericInput('internet', 'Internet Party', 1.5, min = 0, max = 100, step = 0.5),
-      numericInput('sample', 'Sample Size', 787, min = 0, max = 100, step = 1),
+      numericInput('sample', 'Sample Size', 787, min = 0, max = 2000, step = 1),
       submitButton('See Outcomes')
     ),
     mainPanel(
