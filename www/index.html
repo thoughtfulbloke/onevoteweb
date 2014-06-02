@@ -1,0 +1,133 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+
+  <script src="shared/jquery.js" type="text/javascript"></script>
+  <script src="shared/shiny.js" type="text/javascript"></script>
+  <link rel="stylesheet" type="text/css" href="shared/shiny.css"/> 
+
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>One Vote, Two Vote, Red Vote, Blue Vote</title>
+<style type="text/css">
+.commentary {
+	font-style: italic;
+	font-size: 12pt;
+	text-align: right;
+}
+body,td,th {
+	font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+}
+body {
+	background-color: #EEE;
+}
+</style>
+</head>
+
+<body>
+<h1>One Vote, Two Vote, Red Vote, BlueVote </h1>
+<p class="commentary">...a translator between New Zealand politcal poll results and MMP election results</p>
+<h2>Enter the Poll Results:</h2>
+<table width="1200" border="0" cellpadding="2">
+  <tr>
+    <th scope="col">&nbsp;</th>
+    <th scope="col">National</th>
+    <th scope="col">Labour</th>
+    <th scope="col">Green</th>
+    <th scope="col">NZ First</th>
+    <th scope="col">Maori</th>
+    <th scope="col">Mana Internet</th>
+    <th scope="col">Act</th>
+    <th scope="col">United</th>
+    <th scope="col">Conservative</th>
+  </tr>
+  <tr>
+    <th scope="row">Support(%)</th>
+    <td align="center" bgcolor="#00529F"><input name="national_support" type="number" id="national_support" size="6" maxlength="6" value="44.5" min="0" max="100" /></td>
+    <td align="center" bgcolor="#FF0000"><input name="labour_support" type="number" id="labour_support" size="6" maxlength="6" value="32" min="0" max="100" /></td>
+    <td align="center" bgcolor="#098137"><input name="green_support" type="number" id="green_support" size="6" maxlength="6" value="13" min="0" max="100" /></td>
+    <td align="center" bgcolor="#000000"><input name="nzfirst_support" type="number" id="nzfirst_support" size="6" maxlength="6" value="6" min="0" max="100" /></td>
+    <td align="center" bgcolor="#EF4A42"><input name="maori_support" type="number" id="maori_support" size="6" maxlength="6" value="1.5" min="0" max="100" /></td>
+    <td align="center" bgcolor="#770808"><input name="manainternet_support" type="number" id="manainternet_support" size="6" value="1" min="0" max="100" maxlength="6" /></td>
+    <td align="center" bgcolor="#FFCB05"><input name="act_support" type="number" id="act_support" size="6" maxlength="6" value="0" min="0" max="100" /></td>
+    <td align="center" bgcolor="#501557"><input name="united_support" type="number" id="united_support" size="6" maxlength="6" value="0.5" min="0" max="100" /></td>
+    <td align="center" bgcolor="#00AEEF"><input name="conservative_support" type="number" id="conservative_support" size="6" maxlength="6" value="1.5" min="0" max="100" /></td>
+  </tr>
+  <tr>
+    <th scope="row">Electorates</th>
+    <td align="center" bgcolor="#00529F"><input name="national_electorate" type="number" id="national_electorate" size="6" maxlength="6" value="42" min="0" max="130" /></td>
+    <td align="center" bgcolor="#FF0000"><input name="labour_electorate" type="number" id="labour_electorate" size="6" maxlength="6" value="22" min="0" max="130" /></td>
+    <td align="center" bgcolor="#098137"><input name="green_electorate" type="number" id="green_electorate" size="6" maxlength="6" value="0" min="0" max="130" /></td>
+    <td align="center" bgcolor="#000000"><input name="nzfirst_electorate" type="number" id="nzfirst_electorate" size="6" maxlength="6" value="0" min="0" max="130" /></td>
+    <td align="center" bgcolor="#EF4A42"><input name="maori_electorate" type="number" id="maori_electorate" size="6" maxlength="6" value="3" min="0" max="130" /></td>
+    <td align="center" bgcolor="#770808"><input name="manainternet_electorate" type="number" id="manainternet_electorate" size="6" value="1" min="0" max="130" maxlength="6" /></td>
+    <td align="center" bgcolor="#FFCB05"><input name="act_electorate" type="number" id="act_electorate" size="6" maxlength="6" value="1" min="0" max="130" /></td>
+    <td align="center" bgcolor="#501557"><input name="united_electorate" type="number" id="united_electorate" size="6" maxlength="6" value="1" min="0" max="130" /></td>
+    <td align="center" bgcolor="#00AEEF"><input name="conservative_electorate" type="number" id="conservative_electorate" size="6" maxlength="6" value="0" min="0" max="130" /></td>
+  </tr>
+  <tr>
+    <th scope="row">Allies</th>
+    <td align="center" bgcolor="#00529F"><select name="national_allies" id="national_allies">
+      <option value="n" selected="selected">National</option>
+      <option value="l">Labour</option>
+      <option value="u">Unknown</option>
+    </select></td>
+    <td align="center" bgcolor="#FF0000"><select name="labour_allies" id="labour_allies">
+      <option value="n">National</option>
+      <option value="l" selected="selected">Labour</option>
+      <option value="u">Unknown</option>
+    </select></td>
+    <td align="center" bgcolor="#098137"><select name="green_allies" id="green_allies">
+      <option value="n">National</option>
+      <option value="l" selected="selected">Labour</option>
+      <option value="u">Unknown</option>
+    </select></td>
+    <td align="center" bgcolor="#000000"><select name="nzfirst_allies" id="nzfirst_allies">
+      <option value="n">National</option>
+      <option value="l">Labour</option>
+      <option value="u" selected="selected">Unknown</option>
+    </select></td>
+    <td align="center" bgcolor="#EF4A42"><select name="maori_allies" id="maori_allies">
+      <option value="n" selected="selected">National</option>
+      <option value="l">Labour</option>
+      <option value="u">Unknown</option>
+    </select></td>
+    <td align="center" bgcolor="#770808"><select name="manainternet_allies" id="manainternet_allies">
+      <option value="n">National</option>
+      <option value="l" selected="selected">Labour</option>
+      <option value="u">Unknown</option>
+    </select></td>
+    <td align="center" bgcolor="#FFCB05"><select name="act_allies" id="act_allies">
+      <option value="n" selected="selected">National</option>
+      <option value="l">Labour</option>
+      <option value="u">Unknown</option>
+    </select></td>
+    <td align="center" bgcolor="#501557"><select name="united_allies" id="united_allies">
+      <option value="n" selected="selected">National</option>
+      <option value="l">Labour</option>
+      <option value="u">Unknown</option>
+    </select></td>
+    <td align="center" bgcolor="#00AEEF"><select name="conservative_allies" id="conservative_allies">
+      <option value="n" selected="selected">National</option>
+      <option value="l">Labour</option>
+      <option value="u">Unknown</option>
+    </select></td>
+  </tr>
+</table>
+<p>and the sample size: 
+  <input type="number" name="sample" id="sample"  value="787" min="1" max="10000" />
+</p>
+<p>then generate the graphs 
+  <input type="submit" name="Make graph" id="Make graph" value="Make graph" />
+</p>
+<h2>Individual Party Support:</h2>
+<p>taking the individual party results</p>
+<div id="inplot" class="shiny-plot-output" style="width: 100%; height: 300px"></div> 
+<h2>Election Results:</h2>
+<p>taking the poll results as the basis for simulating 1000 elections </p>
+<div id="outplot" class="shiny-plot-output" style="width: 100%; height: 300px"></div> 
+<p><br /></p>
+<p>for the code behind the graphs, see  <a target="newblank" href="https://github.com/thoughtfulbloke/onevoteweb">https://github.com/thoughtfulbloke/onevoteweb</a></p>
+<p><br /></p>
+</body>
+</html>
+ 
