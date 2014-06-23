@@ -167,7 +167,7 @@ shinyServer(
     output$outplot <- renderPlot({
       outcomes <- simulated_election(input)
       freq <- 100 * outcomes$count / sum (outcomes$count)
-      axis_text <- c( "National led\nw/o NZF", "Labour led\nw/o NZF", "Hung Parliament", "Up to NZF")
+      axis_text <- c( "National led\nw/o Undecideds", "Labour led\nw/o Undecideds", "Hung Parliament", "Up to Undecideds")
       colourscheme <- c("#0000FFFF","#FF0000FF","#FF00FFFF", "#000000FF")
       barplot(freq, names.arg=axis_text, main="If the poll is accurate,\nthe election would be", cex.names=0.9, col=colourscheme, ylab="Results Percentage")
     })
